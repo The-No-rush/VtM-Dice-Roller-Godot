@@ -1,0 +1,17 @@
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.csproj.AssemblyReference.cache
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.GeneratedMSBuildEditorConfig.editorconfig
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.AssemblyInfoInputs.cache
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.AssemblyInfo.cs
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.csproj.CoreCompileInputs.cache
+L:\Godot\VtM Dice Roller\.godot\mono\temp\bin\Debug\VtM Dice Roller.deps.json
+L:\Godot\VtM Dice Roller\.godot\mono\temp\bin\Debug\VtM Dice Roller.runtimeconfig.json
+L:\Godot\VtM Dice Roller\.godot\mono\temp\bin\Debug\VtM Dice Roller.dll
+L:\Godot\VtM Dice Roller\.godot\mono\temp\bin\Debug\VtM Dice Roller.pdb
+L:\Godot\VtM Dice Roller\.godot\mono\temp\bin\Debug\GodotSharp.dll
+L:\Godot\VtM Dice Roller\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.csproj.CopyComplete
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.dll
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\refint\VtM Dice Roller.dll
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.pdb
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\VtM Dice Roller.genruntimeconfig.cache
+L:\Godot\VtM Dice Roller\.godot\mono\temp\obj\Debug\ref\VtM Dice Roller.dll

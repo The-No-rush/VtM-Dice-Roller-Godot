@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5p8xhabb6x55"]
+[gd_scene load_steps=4 format=3 uid="uid://c5p8xhabb6x55"]
 
 [ext_resource type="Theme" uid="uid://bdjrqfhyaklx8" path="res://Main.theme" id="1_1yf21"]
 [ext_resource type="Script" path="res://Main.cs" id="1_qli76"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p4jq5"]
+emission_shape = 3
+emission_box_extents = Vector3(40, 1, 1)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 10.0
+angle_min = -180.0
+angle_max = 180.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qli76")
@@ -121,5 +132,11 @@ offset_right = 1420.0
 offset_bottom = 320.0
 theme = ExtResource("1_1yf21")
 theme_override_font_sizes/normal_font_size = 250
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(960, 0)
+scale = Vector2(10, 12)
+process_material = SubResource("ParticleProcessMaterial_p4jq5")
 
 [connection signal="pressed" from="RollButton" to="." method="rollDice"]

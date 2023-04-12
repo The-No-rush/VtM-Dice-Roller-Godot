@@ -10,13 +10,12 @@ public partial class Main : Node2D
 	private TextEdit rollNumEdit;
 	private TextEdit successNumEdit;
 	private RichTextLabel errorLabel;
-	private List<RichTextLabel> rollsLabels = new List<RichTextLabel>();
+	private List<RichTextLabel> rollsLabels = new();
 	private RichTextLabel numOfSuccessesLabel;
+	
 
 	//Change name
-	RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
-
-	// Called when the node enters the scene tree for the first time.
+	RandomNumberGenerator randomNumGen = new();
 	public override void _Ready()
 	{
 		rollNumEdit = GetNode<TextEdit>("RollNumEdit");
@@ -28,14 +27,8 @@ public partial class Main : Node2D
 			rollsLabels.Add(GetNode<RichTextLabel>("DiceRollLabels/Rolls" + (i + 1) + "Label"));
 			rollsLabels[i].Text = "";
 		}
-
 		numOfSuccessesLabel = GetNode<RichTextLabel>("NumOfSuccessesLabel");
 		numOfSuccessesLabel.Text = "";
-	}
-	
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
 	}
 
 	public void rollDice()
@@ -44,6 +37,7 @@ public partial class Main : Node2D
 		bool isDiceParsed = false;
 		int successNum;
 		bool isSuccessParsed = false;
+		int rollsPerLabel = 10;
 		
 		try
 		{
@@ -83,48 +77,61 @@ public partial class Main : Node2D
 			return;
 		}
 
-		if (diceToRoll > 40)
+		if (diceToRoll > 60)
 		{
-			diceToRoll = 40;
-			throwOnScreenError("Dice Num is over 40, making dice to Roll 40");
-			rollNumEdit.Text = "40";
+			throwOnScreenError("Dice Num is over 60, making dice to Roll 60");
+			rollNumEdit.Text = "60";
+			diceToRoll = 60;
 		}
 
 		List<int> diceRolls = new List<int>();
 		for (int i = 0; i < diceToRoll; i++)
 		{
-			diceRolls.Add(randomNumberGenerator.RandiRange(1, 10));
+			diceRolls.Add(randomNumGen.RandiRange(1, 10));
+		}
+		
+		string spacing = " ";
+		
+		if (diceToRoll > 40)
+		{
+			rollsPerLabel = 15;
+			for (int i = 0; i < 4; i++)
+			{
+				rollsLabels[i].Text = @"[center]";
+				rollsLabels[i].AddThemeFontSizeOverride("normal_font_size", 80);
+			}
+		}
+		else
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				rollsLabels[i].Text = @"[center]";
+				rollsLabels[i].AddThemeFontSizeOverride("normal_font_size", 100);
+			}	
 		}
 
-		//Find a way to effect all in  the list without calling each item
-		rollsLabels[0].Text = @"[center]";
-		rollsLabels[1].Text = @"[center]";
-		rollsLabels[2].Text = @"[center]";
-		rollsLabels[3].Text = @"[center]";
-
-		string spacing = " ";
 		for (int i = 0; i < diceRolls.Count; i++)
 		{
-			switch (i /10)
+			switch (i /rollsPerLabel)
 			{
 				case 0:
 					rollsLabels[0].Text += diceRolls[i];
-					if (i % 10 != 9)
+					if (i % rollsPerLabel != rollsPerLabel - 1)
 						rollsLabels[0].Text += spacing;
 					break;
 				case 1:
 					rollsLabels[1].Text += diceRolls[i];
-					if (i % 10 != 9)
+					if (i % rollsPerLabel != rollsPerLabel - 1)
 						rollsLabels[1].Text += spacing;
 					break;
 				case 2:
 					rollsLabels[2].Text += diceRolls[i];
-					if (i % 10 != 9)
+					if (i % rollsPerLabel != rollsPerLabel - 1)
 						rollsLabels[2].Text += spacing;
 					break;
 				case 3:
 					rollsLabels[3].Text += diceRolls[i];
-					if (i % 10 != 9)
+					if (i % rollsPerLabel != rollsPerLabel - 1)
 						rollsLabels[3].Text += spacing;
 					break;
 			}

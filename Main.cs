@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Godot;
+using VtMDiceRoller.Misc_items;
 
 namespace VtMDiceRoller;
 
@@ -12,6 +13,7 @@ public partial class Main : Node2D
 	private RichTextLabel errorLabel;
 	private List<RichTextLabel> rollsLabels = new();
 	private RichTextLabel numOfSuccessesLabel;
+	private DeckOfRandomThings deck;
 	
 
 	//Change name
@@ -164,5 +166,27 @@ public partial class Main : Node2D
 		await Task.Delay(5000); // Using async, this function specifically
 		// can be run in the background to wait for the Task Delay
 		errorLabel.Hide();
+	}
+
+	private void pickCard()
+	{
+		numOfSuccessesLabel.Text = "";
+		
+		deck = (DeckOfRandomThings)randomNumGen.RandiRange(0, 21);
+		string pulledCard;
+		//Basic solution but if more cards are added look into descriptions or EnumMember Attribute
+		if(deck == DeckOfRandomThings.TheFates)
+			pulledCard = "The Fates";
+		else if (deck == DeckOfRandomThings.TheVoid)
+			pulledCard  = "The Void";
+		else
+			pulledCard = deck.ToString();
+		rollsLabels[0].Text = @"[center]" + ((int)deck + 1) + ":" + pulledCard;
+		rollsLabels[0].AddThemeFontSizeOverride("normal_font_size", 100);
+		
+		for (int i = 1; i < 4; i++)
+		{
+			rollsLabels[i].Text = "";
+		}	
 	}
 }

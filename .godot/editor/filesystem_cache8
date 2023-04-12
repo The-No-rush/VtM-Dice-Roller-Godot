@@ -1,15 +1,12 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681312022
+::res://::1681326806
 default_env.tres::Environment::7366942874486343354::1680733851::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1680205600::0::1::::<><>::
 icon.png::CompressedTexture2D::7428015595826265998::1680204392::1680204392::1::::<><>::
-Main.cs::CSharpScript::-1::1681267897::0::1::::<><>::
+Main.cs::CSharpScript::-1::1681312683::0::1::::<><>::
 Main.theme::Theme::2616627650494482795::1680733833::0::1::::<><>::uid://b7f10v34gay86
 Main.tscn::PackedScene::6911517444570645022::1680733851::0::1::::<><>::uid://bdjrqfhyaklx8<>res://Main.cs
-README.md::TextFile::-1::1680207617::0::1::::<><>::
-::res://Export/::1680207743
-::res://Export/data_VtM Dice Roller_x86_64/::1680205600
-VtM Dice Roller.deps.json::JSON::-1::1680205600::0::1::::<><>::
-VtM Dice Roller.runtimeconfig.json::JSON::-1::1680205600::0::1::::<><>::
+README.md::TextFile::-1::1681312760::0::1::::<><>::
+::res://Export/::1681312761
 ::res://Fonts/::1680205026
 FiraCode-VF.ttf::FontFile::4644410003110537569::1680204392::1680205026::1::::<><>::

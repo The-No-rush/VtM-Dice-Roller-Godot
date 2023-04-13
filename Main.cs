@@ -50,10 +50,16 @@ public partial class Main : Node2D
 		}
 		catch (FormatException ignored)
 		{
-			if(!isDiceParsed)
+			if (!isDiceParsed)
+			{
 				throwOnScreenError("Dice Num is not a valid number");
+				rollNumEdit.Text = "";
+			}
 			else if (!isSuccessParsed)
+			{
 				throwOnScreenError("Success Num is not a valid number");
+				successNumEdit.Text = "";
+			}
 			else
 				throwOnScreenError("Unknown FormatException");
 			return;

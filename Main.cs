@@ -79,6 +79,12 @@ public partial class Main : Node2D
 			return;
 		}
 
+		if (successNum > 10)
+		{
+			throwOnScreenError("Success Num is above 10, lowering success to 10");
+			successNumEdit.Text = "10";
+		}
+
 		if (diceToRoll > 60)
 		{
 			throwOnScreenError("Dice Num is over 60, making dice to Roll 60");

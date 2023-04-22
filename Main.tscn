@@ -138,13 +138,13 @@ offset_bottom = 130.0
 theme = ExtResource("1_1yf21")
 text = "Deck of Random Things"
 
-[node name="RollButton3" type="Button" parent="."]
+[node name="GoToButtonEditor" type="Button" parent="."]
 offset_left = 1420.0
 offset_top = 140.0
 offset_right = 1806.0
 offset_bottom = 190.0
 theme = ExtResource("1_1yf21")
-text = "Default Button Editor"
+text = "Go to Button Editor"
 
 [node name="RollButton4" type="Button" parent="."]
 offset_left = 1420.0
@@ -178,9 +178,9 @@ offset_bottom = 430.0
 theme = ExtResource("1_1yf21")
 text = "Default 4"
 
-[connection signal="pressed" from="RollButton" to="." method="rollDice"]
-[connection signal="pressed" from="RollButton2" to="." method="pickCard"]
-[connection signal="pressed" from="RollButton3" to="." method="pickCard"]
+[connection signal="pressed" from="RollButton" to="." method="RollDice"]
+[connection signal="pressed" from="RollButton2" to="." method="PickCard"]
+[connection signal="pressed" from="GoToButtonEditor" to="." method="SwitchToButtonEditor"]
 [connection signal="pressed" from="RollButton4" to="." method="pickCard"]
 [connection signal="pressed" from="RollButton5" to="." method="pickCard"]
 [connection signal="pressed" from="RollButton6" to="." method="pickCard"]

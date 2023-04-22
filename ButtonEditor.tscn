@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://bn5j8tjgwv6v1"]
+[gd_scene load_steps=2 format=3 uid="uid://bn5j8tjgwv6v1"]
+
+[ext_resource type="Script" path="res://ButtonEditor.cs" id="1_ppbau"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ppbau")

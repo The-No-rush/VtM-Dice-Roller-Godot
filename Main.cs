@@ -15,7 +15,6 @@ public partial class Main : Node2D
 	private RichTextLabel numOfSuccessesLabel;
 	private DeckOfRandomThings deck;
 	
-
 	//Change name
 	RandomNumberGenerator randomNumGen = new();
 	public override void _Ready()
@@ -33,7 +32,7 @@ public partial class Main : Node2D
 		numOfSuccessesLabel.Text = "";
 	}
 
-	public void rollDice()
+	private void RollDice()
 	{
 		int diceToRoll;
 		bool isDiceParsed = false;
@@ -52,48 +51,48 @@ public partial class Main : Node2D
 		{
 			if (!isDiceParsed)
 			{
-				throwOnScreenError("Dice Num is not a valid number");
+				ThrowOnScreenError("Dice Num is not a valid number");
 				rollNumEdit.Text = "";
 			}
 			else if (!isSuccessParsed)
 			{
-				throwOnScreenError("Success Num is not a valid number");
+				ThrowOnScreenError("Success Num is not a valid number");
 				successNumEdit.Text = "";
 			}
 			else
-				throwOnScreenError("Unknown FormatException");
+				ThrowOnScreenError("Unknown FormatException");
 			return;
 
 		}
 		catch (Exception ignored)
 		{
-			throwOnScreenError("Unknown");
+			ThrowOnScreenError("Unknown");
 			return;
 		}
 
 		if (diceToRoll < 0)
 		{
-			throwOnScreenError("Dice Num is below 0");
+			ThrowOnScreenError("Dice Num is below 0");
 			rollNumEdit.Text = "";
 			return;
 		}
 		
 		if (successNum < 0)
 		{
-			throwOnScreenError("Success Num is below 0");
+			ThrowOnScreenError("Success Num is below 0");
 			successNumEdit.Text = "";
 			return;
 		}
 
 		if (successNum > 10)
 		{
-			throwOnScreenError("Success Num is above 10, lowering success to 10");
+			ThrowOnScreenError("Success Num is above 10, lowering success to 10");
 			successNumEdit.Text = "10";
 		}
 
 		if (diceToRoll > 60)
 		{
-			throwOnScreenError("Dice Num is over 60, making dice to Roll 60");
+			ThrowOnScreenError("Dice Num is over 60, making dice to Roll 60");
 			rollNumEdit.Text = "60";
 			diceToRoll = 60;
 		}
@@ -154,13 +153,13 @@ public partial class Main : Node2D
 		int numOfSuccesses = 0;
 		for (int i = 0; i < diceRolls.Count; i++)
 		{
-			numOfSuccesses += determineSuccess(successNum, diceRolls[i]);
+			numOfSuccesses += DetermineSuccess(successNum, diceRolls[i]);
 		}
 
 		numOfSuccessesLabel.Text = numOfSuccesses.ToString();
 	}
 
-	private int determineSuccess(int successNum, int roll)
+	private int DetermineSuccess(int successNum, int roll)
 	{
 		if (roll == 1)
 			return -1;
@@ -171,7 +170,7 @@ public partial class Main : Node2D
 		return 0;
 	}
 
-	private async void throwOnScreenError(string source)
+	private async void ThrowOnScreenError(string source)
 	{
 		errorLabel.Text = "Error " + source;
 		errorLabel.Show();
@@ -180,7 +179,7 @@ public partial class Main : Node2D
 		errorLabel.Hide();
 	}
 
-	private void pickCard()
+	private void PickCard()
 	{
 		numOfSuccessesLabel.Text = "";
 		
@@ -200,5 +199,11 @@ public partial class Main : Node2D
 		{
 			rollsLabels[i].Text = "";
 		}	
+	}
+
+	private void SwitchToButtonEditor()
+	{
+		//Look into packed vs scene file
+		GetTree().ChangeSceneToPacked((PackedScene)ResourceLoader.Load("res://ButtonEditor.tscn")); 
 	}
 }

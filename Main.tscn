@@ -146,7 +146,7 @@ offset_bottom = 190.0
 theme = ExtResource("1_1yf21")
 text = "Go to Button Editor"
 
-[node name="RollButton4" type="Button" parent="."]
+[node name="CustomButton1" type="Button" parent="."]
 offset_left = 1420.0
 offset_top = 200.0
 offset_right = 1806.0
@@ -154,7 +154,7 @@ offset_bottom = 250.0
 theme = ExtResource("1_1yf21")
 text = "Default 1"
 
-[node name="RollButton5" type="Button" parent="."]
+[node name="CustomButton2" type="Button" parent="."]
 offset_left = 1420.0
 offset_top = 260.0
 offset_right = 1806.0
@@ -162,7 +162,7 @@ offset_bottom = 310.0
 theme = ExtResource("1_1yf21")
 text = "Default 2"
 
-[node name="RollButton6" type="Button" parent="."]
+[node name="CustomButton3" type="Button" parent="."]
 offset_left = 1420.0
 offset_top = 320.0
 offset_right = 1806.0
@@ -170,7 +170,7 @@ offset_bottom = 370.0
 theme = ExtResource("1_1yf21")
 text = "Default 3"
 
-[node name="RollButton7" type="Button" parent="."]
+[node name="CustomButton4" type="Button" parent="."]
 offset_left = 1420.0
 offset_top = 380.0
 offset_right = 1806.0
@@ -181,7 +181,7 @@ text = "Default 4"
 [connection signal="pressed" from="RollButton" to="." method="RollDice"]
 [connection signal="pressed" from="RollButton2" to="." method="PickCard"]
 [connection signal="pressed" from="GoToButtonEditor" to="." method="SwitchToButtonEditor"]
-[connection signal="pressed" from="RollButton4" to="." method="pickCard"]
-[connection signal="pressed" from="RollButton5" to="." method="pickCard"]
-[connection signal="pressed" from="RollButton6" to="." method="pickCard"]
-[connection signal="pressed" from="RollButton7" to="." method="pickCard"]
+[connection signal="pressed" from="CustomButton1" to="." method="pickCard"]
+[connection signal="pressed" from="CustomButton2" to="." method="pickCard"]
+[connection signal="pressed" from="CustomButton3" to="." method="pickCard"]
+[connection signal="pressed" from="CustomButton4" to="." method="pickCard"]

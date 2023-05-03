@@ -1,7 +1,4 @@
-using Godot;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+namespace VtMDiceRoller;
 
 public partial class ButtonEditor : Node2D
 {

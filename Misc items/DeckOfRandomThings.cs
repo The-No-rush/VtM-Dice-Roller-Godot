@@ -1,8 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
-
-namespace VtMDiceRoller.Misc_items;
+﻿namespace VtMDiceRoller.Misc_items;
 
 public enum DeckOfRandomThings
 {

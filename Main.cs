@@ -1,10 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Godot;
-using VtMDiceRoller.Misc_items;
+global using Godot;
+global using System;
+global using System.Collections.Generic;
+global using System.Threading.Tasks;
 
 namespace VtMDiceRoller;
+
+using VtMDiceRoller.Misc_items;
 
 public partial class Main : Node2D
 {

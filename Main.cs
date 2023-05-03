@@ -98,7 +98,7 @@ public partial class Main : Node2D
 			diceToRoll = 60;
 		}
 
-		List<int> diceRolls = new List<int>();
+		var diceRolls = new List<int>();
 		for (int i = 0; i < diceToRoll; i++)
 		{
 			diceRolls.Add(randomNumGen.RandiRange(1, 10));

@@ -39,7 +39,7 @@ public partial class Main : Node2D
 		int successNum;
 		bool isSuccessParsed = false;
 		int rollsPerLabel = 10;
-		
+
 		try
 		{
 			diceToRoll = Convert.ToInt32(rollNumEdit.Text);
@@ -170,13 +170,19 @@ public partial class Main : Node2D
 		return 0;
 	}
 
-	private async void ThrowOnScreenError(string source)
+	public static async void ThrowOnScreenError(string source, RichTextLabel errorLabel)
 	{
 		errorLabel.Text = "Error " + source;
 		errorLabel.Show();
 		await Task.Delay(5000); // Using async, this function specifically
 		// can be run in the background to wait for the Task Delay
 		errorLabel.Hide();
+	}
+
+	//Mainly to keep the calls inside this class cleaner
+	private void ThrowOnScreenError(string source)
+	{
+		ThrowOnScreenError(source, errorLabel);
 	}
 
 	private void PickCard()

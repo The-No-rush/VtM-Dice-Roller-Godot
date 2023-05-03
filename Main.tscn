@@ -21,7 +21,7 @@ offset_right = 600.0
 offset_bottom = 65.0
 theme = ExtResource("1_1yf21")
 
-[node name="SuccessNumLabel2" type="RichTextLabel" parent="."]
+[node name="SuccessNumLabel" type="RichTextLabel" parent="."]
 offset_left = 20.0
 offset_top = 120.0
 offset_right = 443.0
@@ -107,7 +107,7 @@ bbcode_enabled = true
 fit_content = true
 autowrap_mode = 0
 
-[node name="SuccessNumLabel" type="RichTextLabel" parent="."]
+[node name="DisplaySuccessNumLabel" type="RichTextLabel" parent="."]
 offset_left = 700.0
 offset_top = 140.0
 offset_right = 1120.0

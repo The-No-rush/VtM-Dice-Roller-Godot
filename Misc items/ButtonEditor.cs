@@ -15,8 +15,10 @@ public partial class ButtonEditor : Node2D
 		for (int i = 0; i < 4; i++)
 		{
 			Button button = GetNode<Button>("CustomButton" + (i + 1));
-			button.Pressed += () => SetActionToButton(button.Text.Substring(button.Text.Length -1)); // Can't use i
-			//with lambda so for temporary time using the texts substring
+			int iLambda = i;
+			//Using iLambda since I can't pass in i directly but I can pass in iLambda
+			//as a variable since i is modified outside the loop
+			button.Pressed += () => SetActionToButton(iLambda);
 		}
 	}
 
@@ -30,7 +32,7 @@ public partial class ButtonEditor : Node2D
 		GetTree().ChangeSceneToPacked((PackedScene)ResourceLoader.Load("res://Main.tscn"));
 	}
 
-	public void SetActionToButton(Variant buttonIndex)
+	public void SetActionToButton(int buttonIndex)
 	{
 		GD.Print(buttonIndex);
 	}

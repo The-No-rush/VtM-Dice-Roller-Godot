@@ -6,6 +6,57 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kinjc")
 
+[node name="InstructionsLabel" type="RichTextLabel" parent="."]
+offset_right = 1920.0
+offset_bottom = 120.0
+theme = ExtResource("2_3wn2h")
+text = "Instructions for custom buttons: Enter in how many dice to roll, the number to be a success, and what name you want to give to the button. Then click on any of the four buttons (other than back to Dice roller) to apply your config to the button."
+
+[node name="RollNumLabel" type="RichTextLabel" parent="."]
+offset_left = 20.0
+offset_top = 160.0
+offset_right = 443.0
+offset_bottom = 200.0
+theme = ExtResource("2_3wn2h")
+text = "Number of Dice to roll:"
+
+[node name="RollNumEdit" type="TextEdit" parent="."]
+offset_left = 440.0
+offset_top = 160.0
+offset_right = 600.0
+offset_bottom = 210.0
+theme = ExtResource("2_3wn2h")
+
+[node name="SuccessNumLabel" type="RichTextLabel" parent="."]
+offset_left = 20.0
+offset_top = 252.0
+offset_right = 443.0
+offset_bottom = 292.0
+theme = ExtResource("2_3wn2h")
+text = "Number to be a success:"
+
+[node name="SuccessNumEdit" type="TextEdit" parent="."]
+offset_left = 440.0
+offset_top = 252.0
+offset_right = 600.0
+offset_bottom = 302.0
+theme = ExtResource("2_3wn2h")
+
+[node name="NameLabel" type="RichTextLabel" parent="."]
+offset_left = 20.0
+offset_top = 340.0
+offset_right = 443.0
+offset_bottom = 380.0
+theme = ExtResource("2_3wn2h")
+text = "Name of button:"
+
+[node name="NameEdit" type="TextEdit" parent="."]
+offset_left = 290.0
+offset_top = 340.0
+offset_right = 600.0
+offset_bottom = 390.0
+theme = ExtResource("2_3wn2h")
+
 [node name="Button" type="Button" parent="."]
 offset_left = 1420.0
 offset_top = 140.0

@@ -9,10 +9,10 @@ using VtMDiceRoller.Misc_items;
 
 public partial class Main : Node2D
 {
+	private readonly List<RichTextLabel> rollsLabels = new();
 	private TextEdit rollNumEdit;
 	private TextEdit successNumEdit;
 	private RichTextLabel errorLabel;
-	private List<RichTextLabel> rollsLabels = new();
 	private RichTextLabel numOfSuccessesLabel;
 	private DeckOfRandomThings deck;
 	

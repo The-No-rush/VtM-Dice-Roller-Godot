@@ -2,7 +2,7 @@ namespace VtMDiceRoller;
 
 public partial class ButtonEditor : Node2D
 {
-	private List<Button> selectableButtons = new();
+	private readonly List<Button> selectableButtons = new();
 
 	private Callable actionFunctionCallable;
 	// Called when the node enters the scene tree for the first time.

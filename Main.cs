@@ -1,17 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Godot;
-using VtMDiceRoller.Misc_items;
+global using Godot;
+global using System;
+global using System.Collections.Generic;
+global using System.Threading.Tasks;
 
 namespace VtMDiceRoller;
 
+using VtMDiceRoller.Misc_items;
+
 public partial class Main : Node2D
 {
+	private readonly List<RichTextLabel> rollsLabels = new();
 	private TextEdit rollNumEdit;
 	private TextEdit successNumEdit;
 	private RichTextLabel errorLabel;
-	private List<RichTextLabel> rollsLabels = new();
 	private RichTextLabel numOfSuccessesLabel;
 	private DeckOfRandomThings deck;
 	
@@ -97,7 +98,7 @@ public partial class Main : Node2D
 			diceToRoll = 60;
 		}
 
-		List<int> diceRolls = new List<int>();
+		var diceRolls = new List<int>();
 		for (int i = 0; i < diceToRoll; i++)
 		{
 			diceRolls.Add(randomNumGen.RandiRange(1, 10));

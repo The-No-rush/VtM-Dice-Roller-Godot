@@ -1,11 +1,8 @@
-using Godot;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+namespace VtMDiceRoller;
 
 public partial class ButtonEditor : Node2D
 {
-	private List<Button> selectableButtons = new();
+	private readonly List<Button> selectableButtons = new();
 
 	private Callable actionFunctionCallable;
 	// Called when the node enters the scene tree for the first time.
@@ -27,10 +24,8 @@ public partial class ButtonEditor : Node2D
 	{
 	}
 	
-	private void SwitchToDiceRoller()
-	{
+	private void SwitchToDiceRoller() =>
 		GetTree().ChangeSceneToPacked((PackedScene)ResourceLoader.Load("res://Main.tscn"));
-	}
 
 	public void SetActionToButton(int buttonIndex)
 	{

@@ -1,4 +1,10 @@
-﻿#Exports
+﻿# Godot
+.godot/
+
+# Exports
 Export
 Export/
 ButtonConfigs.save
+
+# Mono Specific
+.vs/

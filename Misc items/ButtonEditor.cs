@@ -24,10 +24,8 @@ public partial class ButtonEditor : Node2D
 	{
 	}
 	
-	private void SwitchToDiceRoller()
-	{
+	private void SwitchToDiceRoller() =>
 		GetTree().ChangeSceneToPacked((PackedScene)ResourceLoader.Load("res://Main.tscn"));
-	}
 
 	public void SetActionToButton(int buttonIndex)
 	{

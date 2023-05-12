@@ -5,7 +5,7 @@ global using System.Threading.Tasks;
 
 namespace VtMDiceRoller;
 
-using VtMDiceRoller.Misc_items;
+using Misc_items;
 
 public partial class Main : Node2D
 {
@@ -126,29 +126,10 @@ public partial class Main : Node2D
 
 		for (int i = 0; i < diceRolls.Count; i++)
 		{
-			switch (i /rollsPerLabel)
-			{
-				case 0:
-					rollsLabels[0].Text += diceRolls[i];
-					if (i % rollsPerLabel != rollsPerLabel - 1)
-						rollsLabels[0].Text += spacing;
-					break;
-				case 1:
-					rollsLabels[1].Text += diceRolls[i];
-					if (i % rollsPerLabel != rollsPerLabel - 1)
-						rollsLabels[1].Text += spacing;
-					break;
-				case 2:
-					rollsLabels[2].Text += diceRolls[i];
-					if (i % rollsPerLabel != rollsPerLabel - 1)
-						rollsLabels[2].Text += spacing;
-					break;
-				case 3:
-					rollsLabels[3].Text += diceRolls[i];
-					if (i % rollsPerLabel != rollsPerLabel - 1)
-						rollsLabels[3].Text += spacing;
-					break;
-			}
+			int row = i / rollsPerLabel;
+			rollsLabels[row].Text += diceRolls[i];
+			if (i % rollsPerLabel != rollsPerLabel - 1)
+				rollsLabels[row].Text += spacing;
 		}
 
 		int numOfSuccesses = 0;
@@ -208,9 +189,7 @@ public partial class Main : Node2D
 		}	
 	}
 
-	private void SwitchToButtonEditor()
-	{
-		//Look into packed vs scene file
-		GetTree().ChangeSceneToPacked((PackedScene)ResourceLoader.Load("res://ButtonEditor.tscn")); 
-	}
+	private void SwitchToButtonEditor() =>
+	//Look into packed vs scene file
+		GetTree().ChangeSceneToPacked((PackedScene)ResourceLoader.Load("res://ButtonEditor.tscn"));
 }
